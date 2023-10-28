@@ -1,7 +1,8 @@
 import React from "react";
+import Navigator from "../../components/Navigator";
 
 const Play = () => {
-  return <div>Play</div>;
+  return <Navigator to="/" label="home" />;
 };
 
 export default Play;

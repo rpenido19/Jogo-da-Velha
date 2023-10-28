@@ -1,0 +1,16 @@
+button.navigator {
+  width: 100%;
+  max-width: 350px;
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button.navigator:hover {
+  background-color: #2672a4;
+}

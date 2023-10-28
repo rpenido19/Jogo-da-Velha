@@ -1,0 +1,28 @@
+.home h2 {
+  text-align: center;
+}
+
+.game-type-row p {
+  width: 76px;
+}
+
+.game-type-row div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+input {
+  display: block;
+  width: calc(100% - 2rem);
+  max-width: 350px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin-bottom: 10px;
+}

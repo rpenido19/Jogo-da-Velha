@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-const ButtonGroup = ({ buttons }) => {
+const ButtonGroup = ({ buttons, setActive }) => {
   const [activeButton, setActiveButton] = useState(null);
 
   const handleButtonClick = (button) => {
     setActiveButton(button);
+    setActive(button.id);
   };
 
   return (
