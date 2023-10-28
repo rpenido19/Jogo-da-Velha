@@ -1,4 +1,4 @@
-.historic {
+.back-btn {
   .navigator {
     position: fixed;
     top: 0;
@@ -16,6 +16,7 @@
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
   }
+
   .navigator:hover {
     background-color: #0d6efd;
     color: rgb(255, 255, 255);

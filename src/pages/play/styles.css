@@ -1,23 +1,62 @@
-.play {
-  .navigator {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 46px;
-    margin: 8px;
-    background: 0 0;
-    box-sizing: border-box;
-    color: #007bff;
-    cursor: pointer;
-    font: 16px/24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    text-align: left;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .navigator:hover {
-    background-color: #0d6efd;
-    color: rgb(255, 255, 255);
-  }
+h2 {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  width: 380px !important;
+  height: 380px !important;
+  gap: 4px;
+  border-radius: 6px;
+}
+
+.row button {
+  width: 100%;
+  height: 100%;
+  appearance: button;
+  background: transparent;
+  border: 1px solid rgb(33, 37, 41);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: rgb(33, 37, 41);
+  cursor: pointer;
+  display: inline-block;
+  font: 400 16px system-ui, -apple-system, sans-serif;
+  line-height: 24px;
+  margin: 4px 2px;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+    box-shadow 0.15s;
+  user-select: none;
+  vertical-align: middle;
+  word-spacing: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.player-one button,
+.player-one button:hover {
+  background-color: #0d6efd !important;
+  border: 1px solid #0d6efd !important;
+  color: #fff;
+}
+
+.player-two button,
+.player-two button:hover {
+  background-color: #dc3545 !important;
+  border: 1px solid #dc3545 !important;
+  color: #fff;
+}
+
+.new-game {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.new-game button {
+  width: 350px;
 }
