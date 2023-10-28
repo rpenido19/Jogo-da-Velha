@@ -4,7 +4,7 @@ const ButtonGroup = ({ buttons, setActive }) => {
   const [activeButton, setActiveButton] = useState(null);
 
   const handleButtonClick = (button) => {
-    setActiveButton(button);
+    setActiveButton(button.id);
     setActive(button.id);
   };
 
@@ -14,7 +14,7 @@ const ButtonGroup = ({ buttons, setActive }) => {
         <button
           key={button.id}
           onClick={() => handleButtonClick(button)}
-          className={button === activeButton ? "active" : ""}
+          className={button.id === activeButton ? "active" : ""}
         >
           {button.label}
         </button>

@@ -1,0 +1,23 @@
+.play {
+  .navigator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 46px;
+    margin: 8px;
+    background: 0 0;
+    box-sizing: border-box;
+    color: #007bff;
+    cursor: pointer;
+    font: 16px/24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    text-align: left;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .navigator:hover {
+    background-color: #0d6efd;
+    color: rgb(255, 255, 255);
+  }
+}
