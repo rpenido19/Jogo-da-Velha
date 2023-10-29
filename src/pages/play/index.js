@@ -2,6 +2,21 @@ import React, { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
 import "./styles.css";
 
+const saveScore = (winner, loser) => {
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleString("pt-BR");
+  const existingData = localStorage.getItem("gameData");
+
+  if (existingData) {
+    const data = JSON.parse(existingData);
+    data.push({ winner, loser, date: formattedDate });
+    localStorage.setItem("gameData", JSON.stringify(data));
+  } else {
+    const data = [{ winner, loser, date: formattedDate }];
+    localStorage.setItem("gameData", JSON.stringify(data));
+  }
+};
+
 const Play = () => {
   const params = new URLSearchParams(window.location.search);
   const size = parseInt(params.get("size"));
@@ -43,10 +58,12 @@ const Play = () => {
       const row = board.slice(startIndex, startIndex + size);
 
       if (isLineFilledWithSymbol(row, "X")) {
+        saveScore(playerOne, playerTwo);
         alert(`${playerOne} venceu!`);
         restart();
         return;
       } else if (isLineFilledWithSymbol(row, "O")) {
+        saveScore(playerTwo, playerOne);
         alert(`${playerTwo} venceu!`);
         restart();
         return;
@@ -58,10 +75,12 @@ const Play = () => {
       const col = board.filter((_, index) => index % size === i);
 
       if (isLineFilledWithSymbol(col, "X")) {
+        saveScore(playerOne, playerTwo);
         alert(`${playerOne} venceu!`);
         restart();
         return;
       } else if (isLineFilledWithSymbol(col, "O")) {
+        saveScore(playerTwo, playerOne);
         alert(`${playerTwo} venceu!`);
         restart();
         return;
@@ -75,10 +94,12 @@ const Play = () => {
     }
 
     if (isLineFilledWithSymbol(diagonal1, "X")) {
+      saveScore(playerOne, playerTwo);
       alert(`${playerOne} venceu!`);
       restart();
       return;
     } else if (isLineFilledWithSymbol(diagonal1, "O")) {
+      saveScore(playerTwo, playerOne);
       alert(`${playerTwo} venceu!`);
       restart();
       return;
@@ -91,10 +112,12 @@ const Play = () => {
     }
 
     if (isLineFilledWithSymbol(diagonal2, "X")) {
+      saveScore(playerOne, playerTwo);
       alert(`${playerOne} venceu!`);
       restart();
       return;
     } else if (isLineFilledWithSymbol(diagonal2, "O")) {
+      saveScore(playerTwo, playerOne);
       alert(`${playerTwo} venceu!`);
       restart();
       return;
@@ -108,20 +131,17 @@ const Play = () => {
   };
 
   useEffect(() => {
-    if (board.every((cell) => cell !== null)) {
-      setTimeout(() => {
-        checkResult();
-      }, 500);
-    }
+    setTimeout(() => {
+      checkResult();
+    }, 500);
     // eslint-disable-next-line
-  }, [board]);
+  }, [board, turn]);
 
   const handleClickBoard = (index) => {
     if (board[index] === null) {
       const newBoard = [...board];
       newBoard[index] = turn ? "X" : "O";
       setBoard(newBoard);
-      checkResult();
       setTurn(!turn);
     }
   };

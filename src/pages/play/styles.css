@@ -36,18 +36,28 @@ h2 {
   -webkit-tap-highlight-color: transparent;
 }
 
-.player-one button,
-.player-one button:hover {
-  background-color: #0d6efd !important;
-  border: 1px solid #0d6efd !important;
+.play button:hover {
+  background-color: #dee2e6;
+}
+
+.play .player-one button {
+  background-color: #0d6efd;
+  border: 1px solid rgb(33, 37, 41);
   color: #fff;
 }
 
-.player-two button,
-.player-two button:hover {
-  background-color: #dc3545 !important;
-  border: 1px solid #dc3545 !important;
+.play .player-one button:hover {
+  background-color: #094cb0;
+}
+
+.play .player-two button {
+  background-color: #dc3545;
+  border: 1px solid rgb(33, 37, 41);
   color: #fff;
+}
+
+.play .player-two button:hover {
+  background-color: #b82c3a;
 }
 
 .new-game {

@@ -1,0 +1,43 @@
+.historic {
+  width: 100%;
+}
+
+.historic h1 {
+  text-align: center;
+}
+
+.historic .score-container {
+  margin: 0 auto;
+  overflow: auto;
+  height: 75vh;
+  width: 100%;
+  max-width: 350px;
+}
+
+.historic .row {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ced4da;
+  font-weight: bold;
+}
+
+.historic .row:last-child {
+  border: 0;
+}
+
+.historic svg {
+  margin-right: 8px;
+}
+
+.historic .winner {
+  color: #0d6efd;
+}
+
+.historic .loser {
+  color: #dc3545;
+}
+
+.historic .date {
+  font-weight: normal;
+  color: #6c757d;
+  font-size: 14px;
+}
