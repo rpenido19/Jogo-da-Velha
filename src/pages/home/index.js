@@ -46,24 +46,28 @@ const Home = () => {
       <input
         placeholder="Jogador 1"
         value={playerOne}
-        onChange={(e) => setPlayerOne(e.target.value)}
+        onChange={(e) =>
+          setPlayerOne(e.target.value)
+            .replace(/[^\w\s]/g, "")
+            .replace(/\s/g, "")
+        }
         maxLength={30}
       />
       <input
         placeholder="Jogador 2"
         value={playerTwo}
-        onChange={(e) => setPlayerTwo(e.target.value)}
+        onChange={(e) =>
+          setPlayerTwo(e.target.value)
+            .replace(/[^\w\s]/g, "")
+            .replace(/\s/g, "")
+        }
         disabled={disabled}
         maxLength={30}
       />
       <h2>Tamanho do tabuleiro</h2>
       <ButtonGroup buttons={buttons} setActive={setActive} />
       <Navigator
-        to={`/play?size=${active}&vsBot=${isToggled}&playerOne=${playerOne
-          .replace(/[^\w\s]/g, "")
-          .replace(/\s/g, "")}&playerTwo=${playerTwo
-          .replace(/[^\w\s]/g, "")
-          .replace(/\s/g, "")}`}
+        to={`/play?size=${active}&vsBot=${isToggled}&playerOne=${playerOne}&playerTwo=${playerTwo}`}
         label="Começar o jogo"
       />
       <Navigator to="/historic" label="Ver histórico de jogadas" />
